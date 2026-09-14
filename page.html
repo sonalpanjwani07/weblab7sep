@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pipe - Get Paid By The Year</title>
-
     <style>
+        /* Base Reset */
         * {
             margin: 0;
             padding: 0;
@@ -16,13 +16,19 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #000000;
             color: #ffffff;
+            overflow-x: hidden;
         }
 
+        /* Layout Container */
         .page {
             min-height: 100vh;
             background: #000000;
+            position: relative; /* Fixed: Scroll indicator positioning baseline */
+            display: flex;
+            flex-direction: column;
         }
 
+        /* Navigation Bar */
         .navbar {
             width: 100%;
             max-width: 1180px;
@@ -32,8 +38,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            z-index: 10;
         }
 
+        /* Brand Logo */
         .logo {
             display: flex;
             align-items: center;
@@ -62,7 +70,7 @@
 
         .logo-icon span:nth-child(1) {
             height: 15px;
-            opacity: .9;
+            opacity: 0.9;
         }
 
         .logo-icon span:nth-child(2) {
@@ -71,9 +79,10 @@
 
         .logo-icon span:nth-child(3) {
             height: 18px;
-            opacity: .8;
+            opacity: 0.8;
         }
 
+        /* Nav Menu Links */
         .nav-links {
             display: flex;
             align-items: center;
@@ -87,14 +96,15 @@
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
-            opacity: .8;
-            transition: opacity .2s ease;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
         }
 
         .nav-links a:hover {
             opacity: 1;
         }
 
+        /* CTA Primary Button */
         .get-started {
             border: none;
             background: #ffffff;
@@ -104,7 +114,7 @@
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            transition: all .2s ease;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
         .get-started:hover {
@@ -112,11 +122,13 @@
             background: #eaeaea;
         }
 
+        /* Hero Section */
         .hero {
-            min-height: calc(100vh - 86px);
+            flex: 1;
             max-width: 1180px;
+            width: 100%;
             margin: 0 auto;
-            padding: 100px 40px 120px;
+            padding: 60px 40px 100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -125,7 +137,6 @@
 
         .hero-content {
             max-width: 900px;
-            margin-top: -50px;
         }
 
         .eyebrow {
@@ -140,7 +151,7 @@
             margin-bottom: 30px;
             color: #f0eded;
             font-size: clamp(48px, 6vw, 78px);
-            line-height: .98;
+            line-height: 0.98;
             letter-spacing: -4px;
             font-weight: 700;
         }
@@ -157,6 +168,7 @@
             line-height: 1.6;
         }
 
+        /* Hero Action Button */
         .hero-button {
             display: inline-flex;
             align-items: center;
@@ -169,7 +181,7 @@
             text-decoration: none;
             font-size: 14px;
             font-weight: 700;
-            transition: all .2s ease;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
         .hero-button:hover {
@@ -181,17 +193,20 @@
             font-size: 17px;
         }
 
+        /* Dot Indicator */
         .scroll-indicator {
             position: absolute;
             top: 50%;
             right: 45px;
+            transform: translateY(-50%);
             width: 9px;
             height: 9px;
             border-radius: 50%;
             background: #ffffff;
-            opacity: .7;
+            opacity: 0.7;
         }
 
+        /* Tablet Responsive (800px Breakpoint) */
         @media (max-width: 800px) {
             .navbar {
                 height: auto;
@@ -209,11 +224,7 @@
             }
 
             .hero {
-                padding: 80px 25px;
-            }
-
-            .hero-content {
-                margin: 0;
+                padding: 60px 25px 80px;
             }
 
             .hero h1 {
@@ -226,6 +237,7 @@
             }
         }
 
+        /* Mobile Responsive (500px Breakpoint) */
         @media (max-width: 500px) {
             .logo {
                 font-size: 22px;
@@ -245,6 +257,7 @@
 
             .hero h1 {
                 font-size: 42px;
+                letter-spacing: -1.5px;
             }
 
             .description {
@@ -253,58 +266,47 @@
         }
     </style>
 </head>
-
 <body>
-    <main class="page">
 
-        <nav class="navbar">
+    <div class="page">
+        <!-- Header/Navbar -->
+        <header class="navbar">
             <a href="#" class="logo">
-                <span class="logo-icon">
+                <div class="logo-icon">
                     <span></span>
                     <span></span>
                     <span></span>
-                </span>
+                </div>
                 pipe
             </a>
 
-            <div class="nav-links">
+            <nav class="nav-links">
                 <a href="#">Products</a>
                 <a href="#">Company</a>
                 <a href="#">Resources</a>
-            </div>
+            </nav>
 
-            <button class="get-started">
-                Get Started
-            </button>
-        </nav>
+            <button class="get-started">Get Started</button>
+        </header>
 
-        <section class="hero">
+        <!-- Main Content -->
+        <main class="hero">
             <div class="hero-content">
-
-                <p class="eyebrow">
-                    FOR COMPANIES WITH RECURRING REVENUE
-                </p>
-
-              <h1>
-    Get paid by the year,<br>
-    charge by the <span>month</span>
-</h1>
-
+                <p class="eyebrow">FOR COMPANIES WITH RECURRING REVENUE</p>
+                <h1>Get paid by the year,<br>charge by the <span>month</span></h1>
                 <p class="description">
                     Stop pushing your customers into discounted annual subscriptions.
                     Your subscriptions are an asset, make them work harder.
                 </p>
-
                 <a href="#" class="hero-button">
-                    Get Started
-                    <span>→</span>
+                    Get Started <span>&rarr;</span>
                 </a>
-
             </div>
-        </section>
+        </main>
 
-        <div class="scroll-indicator"></div>
+        <!-- Visual Anchor Element -->
+        <div class="scroll-indicator" aria-hidden="true"></div>
+    </div>
 
-    </main>
 </body>
 </html>
