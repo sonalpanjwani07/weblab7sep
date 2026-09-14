@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipe - Get Paid By The Year</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .page {
+            min-height: 100vh;
+            background: #000000;
+        }
+
+        .navbar {
+            width: 100%;
+            max-width: 1180px;
+            height: 86px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo-icon {
+            width: 17px;
+            height: 23px;
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+        }
+
+        .logo-icon span {
+            width: 4px;
+            background: #ffffff;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .logo-icon span:nth-child(1) {
+            height: 15px;
+            opacity: .9;
+        }
+
+        .logo-icon span:nth-child(2) {
+            height: 21px;
+        }
+
+        .logo-icon span:nth-child(3) {
+            height: 18px;
+            opacity: .8;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 42px;
+            margin-left: auto;
+            margin-right: 45px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: .8;
+            transition: opacity .2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .get-started {
+            border: none;
+            background: #ffffff;
+            color: #000000;
+            padding: 14px 24px;
+            border-radius: 3px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+
+        .get-started:hover {
+            transform: translateY(-2px);
+            background: #eaeaea;
+        }
+
+        .hero {
+            min-height: calc(100vh - 86px);
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 100px 40px 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin-top: -50px;
+        }
+
+        .eyebrow {
+            margin-bottom: 28px;
+            color: #888888;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        .hero h1 {
+            margin-bottom: 30px;
+            color: #f0eded;
+            font-size: clamp(48px, 6vw, 78px);
+            line-height: .98;
+            letter-spacing: -4px;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: #777777;
+        }
+
+        .description {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #999999;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 38px;
+            padding: 17px 34px;
+            border-radius: 3px;
+            background: #69d69b;
+            color: #0b3020;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all .2s ease;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-2px);
+            background: #7be1a9;
+        }
+
+        .hero-button span {
+            font-size: 17px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            top: 50%;
+            right: 45px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #ffffff;
+            opacity: .7;
+        }
+
+        @media (max-width: 800px) {
+            .navbar {
+                height: auto;
+                padding: 25px;
+                flex-wrap: wrap;
+                gap: 25px;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                gap: 25px;
+                margin: 0;
+            }
+
+            .hero {
+                padding: 80px 25px;
+            }
+
+            .hero-content {
+                margin: 0;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+                letter-spacing: -2.5px;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .logo {
+                font-size: 22px;
+            }
+
+            .get-started {
+                padding: 12px 17px;
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .description {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <span class="logo-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                pipe
+            </a>
+
+            <div class="nav-links">
+                <a href="#">Products</a>
+                <a href="#">Company</a>
+                <a href="#">Resources</a>
+            </div>
+
+            <button class="get-started">
+                Get Started
+            </button>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    FOR COMPANIES WITH RECURRING REVENUE
+                </p>
+
+              <h1>
+    Get paid by the year,<br>
+    charge by the <span>month</span>
+</h1>
+
+                <p class="description">
+                    Stop pushing your customers into discounted annual subscriptions.
+                    Your subscriptions are an asset, make them work harder.
+                </p>
+
+                <a href="#" class="hero-button">
+                    Get Started
+                    <span>→</span>
+                </a>
+
+            </div>
+        </section>
+
+        <div class="scroll-indicator"></div>
+
+    </main>
+</body>
+</html>
